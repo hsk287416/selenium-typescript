@@ -4,13 +4,14 @@
   "main": "src/index.ts",
   "license": "MIT",
   "scripts": {
-    "start": "rimraf images\\* && ts-node src\\index.ts",
-    "clear": "rimraf images\\*"
+    "clear": "rimraf images\\*",
+    "test": "rimraf images\\* && jest"
   },
   "dependencies": {
     "app-root-path": "^3.0.0",
     "chromedriver": "^92.0.1",
     "fs": "^0.0.1-security",
+    "jest": "^27.0.6",
     "mkdirp": "^1.0.4",
     "selenium-webdriver": "^4.0.0-beta.4",
     "typescript": "^4.3.5"
@@ -18,9 +19,11 @@
   "devDependencies": {
     "@types/app-root-path": "^1.2.4",
     "@types/chromedriver": "^81.0.0",
+    "@types/jest": "^26.0.24",
     "@types/mkdirp": "^1.0.2",
     "@types/selenium-webdriver": "^4.0.15",
     "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.4",
     "ts-node": "^10.1.0"
   }
 }

@@ -2,11 +2,8 @@ import webdriver from 'selenium-webdriver'
 import chrome from 'selenium-webdriver/chrome'
 import appRoot from 'app-root-path'
 import path from 'path'
-import BaiduController from './controllers/baidu.controller'
-import { BaseController } from './controllers/base.controller'
 
-const main = async () => {
-  // download site: https://chromedriver.chromium.org/downloads
+export const initWebDriver = (): webdriver.ThenableWebDriver => {
   const driverPath = path.join(appRoot.path, 'chromedriver.exe')
 
   const options = new chrome.Options()
@@ -17,14 +14,6 @@ const main = async () => {
     .setChromeOptions(options)
     .setChromeService(new chrome.ServiceBuilder(driverPath))
     .build()
-
-  const controllers: BaseController[] = [new BaiduController(driver)]
-
-  for (let controller of controllers) {
-    await controller.action()
-  }
-
-  driver.close()
+  driver.manage().window().maximize()
+  return driver
 }
-
-main()
