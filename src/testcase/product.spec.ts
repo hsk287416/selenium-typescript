@@ -62,6 +62,7 @@ describe('Product', () => {
     const goodName = 'G0011_名前'
     const goodNotes = 'G0011_商品説明'
     const goodPrice = 1234
+
     driver.get('http://localhost:3000/product')
     await driver.wait(until.elementLocated(By.className('el-table__row')))
     await getScreenshot(dir, '01_初期画面', driver)
