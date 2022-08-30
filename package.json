@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "clear": "rimraf images\\*",
-    "test": "rimraf images\\* && jest"
+    "start": "rimraf images\\* && ts-node src/index.ts"
   },
   "dependencies": {
     "app-root-path": "^3.0.0",
